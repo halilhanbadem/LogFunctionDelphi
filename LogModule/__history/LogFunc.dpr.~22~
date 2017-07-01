@@ -1,0 +1,39 @@
+library LogFunc;
+
+{ Hyper Yazýlým adýna yazýlmýþtýr, izinsiz kullanýlmasý yasaktýr!
+
+ Author: halil han badem }
+
+uses
+  System.SysUtils,
+  System.Classes,
+  Winapi.Windows;
+{$R *.res}
+
+
+Procedure Log(SLog: String);    stdcall;
+var
+ StringL: TStringList;
+begin
+ if FileExists('C:\databaseconnection.log', True) then
+ begin
+   StringL := TStringList.Create;
+   StringL.LoadFromFile('C:\databaseconnection.log');
+   StringL.Add('['+DateTimeToStr(Date)+']: '+SLog);
+   StringL.SaveToFile('C:\databaseconnection.log');
+   exit;
+ end
+ else
+ if FileExists('C:\databaseconnection.log', false) then
+ begin
+   StringL := TStringList.Create;
+   StringL.Add('['+DateTimeToStr(Date)+']: '+SLog);
+   StringL.SaveToFile('C:\databaseconnection.log');
+   exit;
+ end;
+end;
+
+ Exports Log;
+
+begin
+end.
