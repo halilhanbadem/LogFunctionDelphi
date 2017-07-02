@@ -3,7 +3,7 @@
 SQL Server için geçerli olan ve bu DLL'yi kullanırken formunuzda herhangi bir connection bağlantısını bulundurmak zorunda değilsiniz. Direkt bileşensiz kullanabilirsiniz.
 
 
-[ars=delphi]library FuncLog;
+[code]library FuncLog;
 
 {
 Company: HyperSoftware
@@ -45,7 +45,7 @@ end;
 Exports Log;
 
 begin
-end.[/ars]
+end.[/code]
 
 
 Birkaç öneri vereyim eğer Access veya başka bir veritabanı için kullanacaksanız UniDac bileşeninin Provider kütüphanesini DLL'ye import etmeli ve connection bileşenini oluşturma kodunun hemen yukarısına yazmanız lazım. 
