@@ -1,9 +1,6 @@
 # logfunction
-cengaver
-Bunun veritabanı tablosuna yazan bir sürümünü de yaparsanız daha faydalı olabilir, bu haliyle de en azından bir text dosya ile kullanılabilir,
 
-
-Tekrar merhabalar, bir konu açmak yerine burdan paylaşmak istedim. Geliştirmek için öneri veren @cengaver hoca'ya öncellikle teşekkürlerimi iletiyorum. SQL Server için geçerli olan ve bu DLL'yi kullanırken formunuzda herhangi bir connection bağlantısını bulundurmak zorunda değilsiniz. Direkt bileşensiz kullanabilirsiniz.
+SQL Server için geçerli olan ve bu DLL'yi kullanırken formunuzda herhangi bir connection bağlantısını bulundurmak zorunda değilsiniz. Direkt bileşensiz kullanabilirsiniz.
 
 
 [ars=delphi]library FuncLog;
