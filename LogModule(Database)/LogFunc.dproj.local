@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/06/28 00:54:34.000.552,C:\Users\halil\OneDrive\Belgeler\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\halil\OneDrive\Belgeler\Embarcadero\Studio\Projects\LogFunc.dproj</Transaction>
+    <Transaction>2017/06/28 01:01:00.000.327,C:\Users\halil\OneDrive\Belgeler\Embarcadero\Studio\Projects\LogFunc.dproj=C:\Users\halil\Desktop\HyperLogModule\LogFunc.dproj</Transaction>
+    <Transaction>2017/07/03 00:57:10.000.090,C:\Users\halil\Desktop\HyperLogModule\LogFunc.dproj=C:\Users\halil\Desktop\HyperLogModule\FuncLog.dproj</Transaction>
+    <Transaction>2017/07/03 01:19:07.766,C:\Users\halil\Desktop\LogModule(Database)\LogFunc.dproj=C:\Users\halil\Desktop\LogModule(Database)\FuncLog.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

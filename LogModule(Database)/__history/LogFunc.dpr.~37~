@@ -1,0 +1,65 @@
+library LogFunc;
+
+{
+ Company: HyperSoftware
+ Author: Halil Han Badem }
+
+uses
+  System.SysUtils,
+  System.Classes,
+  Winapi.Windows,
+  Uni, UniProvider;
+{$R *.res}
+
+
+Procedure Log(SLog, CString, TAdi: String);
+var
+ StringL: TStringList;
+ buf: array[0..260] of char;
+ Yol: String;
+ Baglanti: TUniConnection;
+ Query: TUniQuery;
+ Provider: TUniProviders;
+begin
+
+ Provider := T
+
+ Baglanti := TUniConnection.Create(nil);
+ Baglanti.ConnectString := CString;
+ Baglanti.Connected := True;
+
+ Query.Connection := Baglanti;
+ Query.Close;
+ Query.SQL.Text := 'select * from '+Tadi;
+ Query.ExecSQL;
+ Query.Open;
+ Query.Active := True;
+
+ Query.SQL.Text := 'insert into '+TAdi+' (Date, Comment) VALUES(:Date, :Comment)';
+ Query.ParamByName('Date').AsDate := Date;
+ Query.ParamByName('Comment').AsString := SLog;
+ Query.ExecSQL;
+ Query.Close;
+
+ GetModuleFileName(HInstance, buf, Length(buf));
+ Yol := StringReplace(buf, '\LogFunc.dll', Trim(''), [rfReplaceAll, rfIgnoreCase]);
+
+ if FileExists(Yol+'\db.log') then
+ begin
+   StringL := TStringList.Create;
+   StringL.LoadFromFile(Yol+'\db.log');
+   StringL.Add('['+DateToStr(Date)+' '+TimeToStr(Time)+']: '+SLog);
+   StringL.SaveToFile(Yol+'\db.log');
+ end
+ else
+ begin
+   StringL := TStringList.Create;
+   StringL.Add('['+DateToStr(Date)+' '+TimeToStr(Time)+']: '+SLog);
+   StringL.SaveToFile(Yol+'\db.log');
+ end;
+end;
+
+ Exports Log;
+
+begin
+end.
